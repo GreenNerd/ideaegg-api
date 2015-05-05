@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - session
   - ideas
+  - users
   - errors
 
 search: true
