@@ -181,3 +181,23 @@ Content-Type: application/json
 | content    |   string |  **Required.** new content |
 | public    |   boolean |  **Optional.** true or false  |
 | level    |   integer |  **Optional.** idea's level, default is 0  |
+
+## Delete idea
+
+Delete an idea owned by the authenticated user.
+
+```http
+DELETE /ideas/4 HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 204 no content
+```
+
+`DELETE /ideas/:id`
+
+**Parameters**
+
+| Name      |     Type |   Description   |
+| :-------- | --------| :------ |
+| id    |   integer |  **Required.** id of the idea  |
