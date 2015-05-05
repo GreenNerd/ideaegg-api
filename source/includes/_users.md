@@ -259,7 +259,52 @@ Content-Type: application/json
 ]
 ```
 
-`GET /my/ideas`
+`GET /my/liked_ideas`
+
+**Parameters**
+
+- None
+
+## Get my starred ideas
+
+Get current user's starred ideas.
+
+```http
+GET /my/starred_ideas HTTP/1.1
+PROVIATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 200 ok
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "title": "hello",
+    "content": "world",
+    "public" : true,
+    "created_at": "2013-09-30T13: 46: 02Z",
+    "updated_at": "2013-09-30T13: 46: 02Z",
+    "comments_count": 0,
+    "cached_votes_up": 0,
+    "stars_count": 0,
+    "author": {
+      "id": 1,
+      "username": "john_smith",
+      "fullname": "john_smith",
+      "avatar": "http://qiniu.com/xxx"
+    },
+    "tags" : {
+      "foo"
+    }
+  },
+  {
+    ...
+  }
+]
+```
+
+`GET /my/starred_ideas`
 
 **Parameters**
 
