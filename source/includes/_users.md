@@ -139,3 +139,38 @@ Content-Type: application/json
 | avatar    |   string |  **Optional.** avatar url  |
 
 
+## Follow user
+
+Follow another user by the authenticated user.
+
+```http
+POST /users/2/follow HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 200 ok
+```
+
+`POST /users/:id/follow`
+
+| Name      |     Type |   Description   |
+| :-------- | -------- | :------ |
+| id    |   integer |  **Required.** The id of a user that will be followed  |
+
+## Unfollow user
+
+Unfollow another user by the authenticated user.
+
+```http
+DELETE /users/2/follow HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 200 ok
+```
+
+`DELETE /users/:id/follow`
+
+| Name      |     Type |   Description   |
+| :-------- | -------- | :------ |
+| id    |   integer |  **Required.** The id of a user that will be unfollowed  |
