@@ -241,3 +241,43 @@ HTTP/1.1 200 ok
 | Name      |     Type |   Description   |
 | :-------- | --------| :------ |
 | id    |   integer |  **Required.** id of the idea  |
+
+## Star idea
+
+Star an idea by the authenticated user.
+
+```http
+POST /ideas/3/star HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 200 ok
+```
+
+`POST /ideas/:id/star`
+
+**Parameters**
+
+| Name      |     Type |   Description   |
+| :-------- | --------| :------ |
+| id    |   integer |  **Required.** id of the idea  |
+
+## Unstar idea
+
+Unstar an idea by the authenticated user.
+
+```http
+DELETE /ideas/3/star HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 200 ok
+```
+
+`DELETE /ideas/:id/star`
+
+**Parameters**
+
+| Name      |     Type |   Description   |
+| :-------- | --------| :------ |
+| id    |   integer |  **Required.** id of the idea  |
