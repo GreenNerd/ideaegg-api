@@ -43,7 +43,44 @@ Content-Type: application/json
 **parameters**
 
 | Name      |     Type |   Description   |
-| :-------- | --------:| :------: |
+| :-------- | --------:| :------ |
 | tag    |   string |  **Optional.**Inquire ideas by tag  |
 
+## Get an idea by id
 
+Get a specific idea, identified by idea ID.
+
+```http
+GET /ideas/4 HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 200 ok
+Content-Type: application/json
+
+{
+  "id": 4,
+  "title": "hello",
+  "content": "world",
+  "public" : true,
+  "created_at": "2013-09-30T13: 46: 02Z",
+  "updated_at": "2013-09-30T13: 46: 02Z",
+  "comments_count": 0,
+  "cached_votes_up": 0,
+  "stars_count": 0,
+  "author": {
+    "id": 1,
+    "username": "john_smith",
+    "fullname": "john_smith",
+    "avatar": "http://qiniu.com/xxx"
+  }
+}
+```
+
+`GET /ideas/:id`
+
+**Parameters**
+
+| Name      |     Type |   Description   |
+| :-------- | --------:| :------ |
+| id    |   integer |  **Required.**The id of an idea  |
