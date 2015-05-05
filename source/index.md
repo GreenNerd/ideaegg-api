@@ -10,6 +10,7 @@ toc_footers:
 
 includes:
   - session
+  - ideas
   - errors
 
 search: true
