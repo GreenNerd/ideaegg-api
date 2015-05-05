@@ -281,3 +281,47 @@ HTTP/1.1 200 ok
 | Name      |     Type |   Description   |
 | :-------- | --------| :------ |
 | id    |   integer |  **Required.** id of the idea  |
+
+
+## Tag idea
+
+Tag an idea by the authenticated user.
+
+```http
+PUT /ideas/3/tag HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 200 ok
+```
+
+`PUT /ideas/:id/tag`
+
+**Parameters**
+
+| Name      |     Type |   Description   |
+| :-------- | --------| :------ |
+| id    |   integer |  **Required.** id of the idea  |
+| tag    |   string |  **Required.** tags, splitted by ',' such as 'software' or 'software, children'  |
+
+
+## Untag idea
+
+Untag an idea by the authenticated user.
+
+```http
+PUT /ideas/3/untag HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+```
+```http
+HTTP/1.1 200 ok
+```
+
+`PUT /ideas/:id/untag`
+
+**Parameters**
+
+| Name      |     Type |   Description   |
+| :-------- | --------| :------ |
+| id    |   integer |  **Required.** id of the idea  |
+| tag    |   string |  **Required.** tags, splitted by ',' such as 'software' or 'software, children'  |
