@@ -76,3 +76,36 @@ Content-Type: application/json
 | login    |   string |  **Required**.The login of user: username or email  |
 | password   |   string |  **Required**.Valid password |
 
+## Sign in with wechat
+
+```http
+POST /sign_in_with/wechat HTTP/1.1
+Content-Type: application/json
+
+{
+  "uid": "test_uid"
+}
+```
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1,
+  "username": "john_smith",
+  "email": "john@example.com",
+  "fullname": "john_smith",
+  "private_token": "dd34asd13as",
+  "created_at": "2012-05-23T08:00:58Z"
+}
+```
+
+`POST /sign_in_with/wechat`
+
+**Parameters**
+
+| Name      |     Type |   Description   |
+| :-------- | --------:| :------ |
+| uid    |   string |  **Required**.The openid of wechat  |
+| username   |   string |  **Optional**. The username of user.if no, the endpoint will generates one |
+| email   |   string |  **Optional**. The email of user.if no, the endpoint will generates one |
