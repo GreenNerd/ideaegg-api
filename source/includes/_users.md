@@ -1,100 +1,47 @@
 # Users
 
-## List users
+## Get current user
 
-Get a list of users by the authenticated user.
+Get self user
 
 ```http
-GET /users HTTP/1.1
+GET /user HTTP/1.1
 PRIVATE-TOKEN: your_private_token
 ```
 ```http
 HTTP/1.1 200 ok
 Content-Type: application/json
 
-[
-  {
-    "id": 1,
-    "username": "john_smith",
-    "email": "john@example.com",
-    "fullname": "john_smith",
-    "avatar" : "http://qiniu.com/xxx",
-    "level" : 0,
-    "money" : 0,
-    "ideas_count" : 0,
-    "comments_count" : 0,
-    "followees_count" : 0,
-    "followers_count" : 0,
-    "liked_ideas_count" : 0
-  },
-  {
-    ...
-  }
-]
+{
+  "id": 15,
+  "username": "testtest",
+  "email": "test@qq.com",
+  "fullname": "testtest",
+  "created_at": "2015-05-23T01:27:56.015Z",
+  "phone_number": null,
+  "avatar": null,
+  "private_token": "WwUD85zhd_kMEurVu7SE"
+}
 ```
 
-`GET /users`
+`GET /user`
 
 **Parameters**
 
 - None
 
-## Get single user
-
-Get a specific user, identified by idea ID.
-
-```http
-GET /users/1 HTTP/1.1
-PRIVATE-TOKEN: your_private_token
-```
-```http
-HTTP/1.1 200 ok
-Content-Type: application/json
-
-{
-  "id": 1,
-  "username": "john_smith",
-  "fullname": "john_smith",
-  "avatar" : "http://qiniu.com/xxx",
-  "level" : 0,
-  "money" : 0,
-  "ideas_count" : 0,
-  "comments_count" : 0,
-  "followees_count" : 0,
-  "followers_count" : 0,
-  "liked_ideas_count" : 0,
-  "email": "john@example.com",
-  "phone_number" : "13800000000",
-  "sign_up_type" : "wechat", // wechat or web
-  "created_at": "2013-09-30T13: 46: 02Z",
-  "updated_at": "2013-09-30T13: 46: 02Z"
-}
-```
-
-`GET /users/:id`
-
-| Name      |     Type |   Description   |
-| :-------- | -------- | :------ |
-| id    |   integer |  **Required.**The id of a user  |
-
 ## Update user
 
-Update a user's username, fullname or email by the authenticated user.
+Update a user's avatar, fullname or phone_number by the authenticated user.
 
 ```http
-PUT /users/1 HTTP/1.1
+PUT /user HTTP/1.1
 PRIVATE-TOKEN: your_private_token
 Content-Type: application/json
 
 {
-  "username": "test-username",
   "fullname": "test-fullname",
-  "wechat_openid": "1234asdadfafadsf",
   "avatar" : "http://qiniu.com/test",
-  "level" : 0,
-  "money" : 0,
-  "ideas_count" : 0,
-  "email": "john@example.com",
   "phone_number" : "13800000000"
 }
 ```
@@ -103,38 +50,25 @@ HTTP/1.1 200 ok
 Content-Type: application/json
 
 {
-  "id": 1,
-  "username": "test-username",
+  "id": 15,
+  "username": "testtest",
+  "email": "test@qq.com",
   "fullname": "test-fullname",
+  "created_at": "2015-05-23T01:27:56.015Z",
+  "phone_number" : "13800000000"
   "avatar" : "http://qiniu.com/test",
-  "level" : 0,
-  "money" : 0,
-  "ideas_count" : 0,
-  "comments_count" : 0,
-  "followees_count" : 0,
-  "followers_count" : 0,
-  "liked_ideas_count" : 0,
-  "email": "john@example.com",
-  "phone_number" : "13800000000",
-  "sign_up_type" : "wechat", // wechat or web
-  "created_at": "2013-09-30T13: 46: 02Z",
-  "updated_at": "2013-09-30T13: 46: 02Z"
+  "private_token": "WwUD85zhd_kMEurVu7SE"
 }
 ```
 
-`PUT /users/:id`
+`PUT /user`
 
 **Parameters**
 
  Name      |     Type |   Description   |
 | :-------- | -------- | :------ |
-| id    |   integer |  **Required.**The id of a user  |
-| username    |   string |  **Optional.** new username  |
 | fullname    |   string |  **Optional.** new fullname  |
-| email    |   string |  **Optional.** new email  |
 | wechat_openid    |   string |  **Optional.** wechat openid  |
-| level    |   string |  **Optional.** user level, default is 0  |
-| money    |   string |  **Optional.** user money, default is 0  |
 | phone_number    |   string |  **Optional.** phone number  |
 | avatar    |   string |  **Optional.** avatar url  |
 
@@ -180,7 +114,7 @@ HTTP/1.1 200 ok
 Get current user's ideas.
 
 ```http
-GET /my/ideas HTTP/1.1
+GET /user/ideas/created HTTP/1.1
 PRIVATE-TOken: your_private_token
 ```
 ```http
@@ -189,24 +123,14 @@ Content-Type: application/json
 
 [
   {
-    "id": 4,
-    "title": "hello",
-    "content": "world",
-    "public" : true,
-    "created_at": "2013-09-30T13: 46: 02Z",
-    "updated_at": "2013-09-30T13: 46: 02Z",
-    "comments_count": 0,
-    "cached_votes_up": 0,
+    "id": 2,
+    "title": "xx",
+    "cover": "http://qiniu.com/test",
+    "summary": null,
+    "content": "test",
+    "content_html": "<p>test</p>\n",
     "stars_count": 0,
-    "author": {
-      "id": 1,
-      "username": "john_smith",
-      "fullname": "john_smith",
-      "avatar": "http://qiniu.com/xxx"
-    },
-    "tags" : {
-      "foo"
-    }
+    "votes_count": 2
   },
   {
     ...
@@ -214,7 +138,7 @@ Content-Type: application/json
 ]
 ```
 
-`GET /my/ideas`
+`GET /user/ideas/voted`
 
 **Parameters**
 
@@ -225,7 +149,7 @@ Content-Type: application/json
 Get current user's liked ideas.
 
 ```http
-GET /my/liked_ideas HTTP/1.1
+GET /user/ideas/voted HTTP/1.1
 PROVIATE-TOKEN: your_private_token
 ```
 ```http
@@ -234,24 +158,14 @@ Content-Type: application/json
 
 [
   {
-    "id": 4,
-    "title": "hello",
-    "content": "world",
-    "public" : true,
-    "created_at": "2013-09-30T13: 46: 02Z",
-    "updated_at": "2013-09-30T13: 46: 02Z",
-    "comments_count": 0,
-    "cached_votes_up": 0,
+    "id": 1,
+    "title": "xx",
+    "cover": "http://qiniu.com/test",
+    "summary": null,
+    "content": "test",
+    "content_html": "<p>test</p>\n",
     "stars_count": 0,
-    "author": {
-      "id": 1,
-      "username": "john_smith",
-      "fullname": "john_smith",
-      "avatar": "http://qiniu.com/xxx"
-    },
-    "tags" : {
-      "foo"
-    }
+    "votes_count": 2
   },
   {
     ...
@@ -259,7 +173,7 @@ Content-Type: application/json
 ]
 ```
 
-`GET /my/liked_ideas`
+`GET /user/ideas/voted`
 
 **Parameters**
 
@@ -270,7 +184,7 @@ Content-Type: application/json
 Get current user's starred ideas.
 
 ```http
-GET /my/starred_ideas HTTP/1.1
+GET /user/ideas/starred HTTP/1.1
 PROVIATE-TOKEN: your_private_token
 ```
 ```http
@@ -279,24 +193,14 @@ Content-Type: application/json
 
 [
   {
-    "id": 4,
-    "title": "hello",
-    "content": "world",
-    "public" : true,
-    "created_at": "2013-09-30T13: 46: 02Z",
-    "updated_at": "2013-09-30T13: 46: 02Z",
-    "comments_count": 0,
-    "cached_votes_up": 0,
+    "id": 1,
+    "title": "xx",
+    "cover": "http://qiniu.com/test",
+    "summary": null,
+    "content": "test",
+    "content_html": "<p>test</p>\n",
     "stars_count": 0,
-    "author": {
-      "id": 1,
-      "username": "john_smith",
-      "fullname": "john_smith",
-      "avatar": "http://qiniu.com/xxx"
-    },
-    "tags" : {
-      "foo"
-    }
+    "votes_count": 2
   },
   {
     ...
@@ -304,7 +208,7 @@ Content-Type: application/json
 ]
 ```
 
-`GET /my/starred_ideas`
+`GET /user/ideas/starred`
 
 **Parameters**
 
