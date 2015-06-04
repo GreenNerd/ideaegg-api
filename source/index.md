@@ -55,5 +55,5 @@ PRIVATE-TOKEN: your_private_token
 When listing resources you can pass the following parameters:
 
 - `page` (default: `1`) - page number
-- `per_page` (default: `10`, max: `100`) - number of items to list per page
+- `per_page` (default: `24`, max: `100`) - number of items to list per page
 
