@@ -120,20 +120,41 @@ PRIVATE-TOken: your_private_token
 ```http
 HTTP/1.1 200 ok
 Content-Type: application/json
+Link: <http://localhost:3000/api/v2/user/ideas/created?page=1&per_page=24>; rel="first",
+      <http://localhost:3000/api/v2/user/ideas/created?page=1&per_page=24>; rel="last"
+
 
 [
   {
-    "id": 2,
-    "title": "xx",
-    "cover": "http://qiniu.com/test",
-    "summary": null,
-    "content": "test",
-    "content_html": "<p>test</p>\n",
+    "id": 8,
+    "title": "test-title",
+    "cover": null,
+    "summary": "test-summary",
+    "content": "test-content",
     "stars_count": 0,
-    "votes_count": 2
-  },
-  {
-    ...
+    "comments_count": 0,
+    "votes_count": 0,
+    "author": {
+      "id": 11,
+      "username": "8ac89167",
+      "email": "8ac89167@ideaegg.me",
+      "fullname": "8ac89167",
+      "created_at": "2015-06-06T02:50:30.447Z",
+      "phone_number": null,
+      "avatar": null
+    },
+    "tags": [
+      {
+        "id": 4,
+        "name": "test",
+        "taggings_count": 1
+      },
+      {
+        "id": 5,
+        "name": "test2",
+        "taggings_count": 1
+      }
+    ]
   }
 ]
 ```
@@ -155,20 +176,41 @@ PROVIATE-TOKEN: your_private_token
 ```http
 HTTP/1.1 200 ok
 Content-Type: application/json
+Link: <http://localhost:3000/api/v2/user/ideas/voted?page=1&per_page=24>; rel="first",
+      <http://localhost:3000/api/v2/user/ideas/voted?page=1&per_page=24>; rel="last"
 
 [
   {
     "id": 1,
-    "title": "xx",
-    "cover": "http://qiniu.com/test",
-    "summary": null,
-    "content": "test",
-    "content_html": "<p>test</p>\n",
-    "stars_count": 0,
-    "votes_count": 2
-  },
-  {
-    ...
+    "title": "Hello",
+    "cover": "http://test_image/test.png",
+    "summary": "Sirloin leberkas doner pork loin strip steak.",
+    "content": "**World**",
+    "content_html": "<p><strong>World</strong></p>",
+    "stars_count": 11,
+    "comments_count": 2,
+    "votes_count": 11,
+    "author": {
+      "id": 1,
+      "username": "johndoe1",
+      "email": "john1@ideaegg.me",
+      "fullname": "John Doe",
+      "created_at": "2015-06-06T02:20:40.292Z",
+      "phone_number": null,
+      "avatar": null
+    },
+    "tags": [
+      {
+        "id": 1,
+        "name": "test_tag1",
+        "taggings_count": 5
+      },
+      {
+        "id": 2,
+        "name": "test_tag2",
+        "taggings_count": 5
+      }
+    ]
   }
 ]
 ```
@@ -190,20 +232,41 @@ PROVIATE-TOKEN: your_private_token
 ```http
 HTTP/1.1 200 ok
 Content-Type: application/json
+Link: <http://localhost:3000/api/v2/user/ideas/starred?page=1&per_page=24>; rel="first",
+      <http://localhost:3000/api/v2/user/ideas/starred?page=1&per_page=24>; rel="last"
 
 [
   {
     "id": 1,
-    "title": "xx",
-    "cover": "http://qiniu.com/test",
-    "summary": null,
-    "content": "test",
-    "content_html": "<p>test</p>\n",
-    "stars_count": 0,
-    "votes_count": 2
-  },
-  {
-    ...
+    "title": "Hello",
+    "cover": "http://test_image/test.png",
+    "summary": "Sirloin leberkas doner pork loin strip steak.",
+    "content": "**World**",
+    "content_html": "<p><strong>World</strong></p>",
+    "stars_count": 11,
+    "comments_count": 2,
+    "votes_count": 11,
+    "author": {
+      "id": 1,
+      "username": "johndoe1",
+      "email": "john1@ideaegg.me",
+      "fullname": "John Doe",
+      "created_at": "2015-06-06T02:20:40.292Z",
+      "phone_number": null,
+      "avatar": null
+    },
+    "tags": [
+      {
+        "id": 1,
+        "name": "test_tag1",
+        "taggings_count": 5
+      },
+      {
+        "id": 2,
+        "name": "test_tag2",
+        "taggings_count": 5
+      }
+    ]
   }
 ]
 ```
