@@ -276,3 +276,44 @@ Link: <http://localhost:3000/api/v2/user/ideas/starred?page=1&per_page=24>; rel=
 **Parameters**
 
 - None
+
+
+## Modify password
+modify password by current password
+
+```http
+PUT /user/password HTTP/1.1
+PRIVATE-TOKEN: your_private_token
+Content-Type: application/json
+
+{
+  current_password: 'test_password',
+  password: 'new_password',
+  password_confirmation: 'new_password'
+}
+```
+```http
+HTTP/1.1 200 ok
+Content-Type: application/json
+
+{
+  "id": 15,
+  "username": "testtest",
+  "email": "test@qq.com",
+  "fullname": "testtest",
+  "created_at": "2015-05-23T01:27:56.015Z",
+  "phone_number": null,
+  "avatar": null,
+  "private_token": "WwUD85zhd_kMEurVu7SE"
+}
+```
+
+`PUT /user/password`
+
+**Parameters**
+
+| Name      |     Type |   Description   |
+| :-------- | --------| :------ |
+| current_password    |   string |  **Required.** currnet password of the user  |
+| password    |   string |  **Required.** new password of the user  |
+| password_confirmation    |   string |  **Required.** new password confirmation |
