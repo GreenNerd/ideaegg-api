@@ -577,7 +577,16 @@ Link: <http://localhost:3000/api/v2/ideas/1/comments?page=1&per_page=24>; rel="f
     "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
     "body_html": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>\ ",
     "created_at": "2015-06-06T02:20:54.174Z",
-    "idea_id": 1
+    "idea_id": 1,
+    "user": {
+      "id": 1,
+      "username": "johndoe1",
+      "email": "john1@ideaegg.me",
+      "fullname": "John Doe",
+      "created_at": "2015-06-06T02:20:40.292Z",
+      "phone_number": null,
+      "avatar": null
+    }
   }
 ]
 ```
@@ -604,11 +613,20 @@ Content-Type: application/json
 ```
 ```http
 {
-  "id": 6,
-  "body": "this is a body",
-  "body_html": "<p>this is a body</p>\ ",
-  "created_at": "2015-06-06T14:47:04.100Z",
-  "idea_id": 1
+  "id": 7,
+  "body": "test",
+  "body_html": "<p>test</p>\ ",
+  "created_at": "2015-06-08T01:15:58.530Z",
+  "idea_id": 1,
+  "user": {
+    "id": 11,
+    "username": "8ac89167",
+    "email": "8ac89167@ideaegg.me",
+    "fullname": "8ac89167",
+    "created_at": "2015-06-06T02:50:30.447Z",
+    "phone_number": null,
+    "avatar": null
+  }
 }
 ```
 
