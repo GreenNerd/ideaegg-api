@@ -191,7 +191,7 @@ HTTP/1.1 201 created
 Update an idea's title or content owned by the authenticated user.
 
 ```http
-PUT /ideas/4 HTTP/1.1
+PUT /ideas/1 HTTP/1.1
 PRIVATE-TOKEN: your_private_token
 Content-Type: application/json
 
@@ -199,23 +199,45 @@ Content-Type: application/json
   "title": "test-title2",
   "summary": "test-summary2",
   "content": "test-content2",
-   "cover": "http://qiniu.com/test2"
+  "cover": "http://qiniu.com/test2"
 }
 ```
 ```http
 HTTP/1.1 200 ok
 Content-Type: application/json
 
-  {
-    "id": 2,
-    "title": "test-title2",
-    "cover": "http://qiniu.com/test2",
+{
+  "id": 1,
+  "title": "test-title2",
+  "cover": "http://qiniu.com/test2",
   "summary": "test-summary2",
-    "content": "test-content2",
-    "content_html": "<p>test-content2</p>\n",
-    "stars_count": 0,
-    "votes_count": 2
-  }
+  "content": "test-content2",
+  "content_html": "<p>test-content2</p>\n ",
+  "stars_count": 10,
+  "comments_count": 1,
+  "votes_count": 11,
+  "author": {
+    "id": 1,
+    "username": "johndoe1",
+    "email": "john1@ideaegg.me",
+    "fullname": "John Doe",
+    "created_at": "2015-06-06T02:20:40.292Z",
+    "phone_number": null,
+    "avatar": null
+  },
+  "tags": [
+    {
+      "id": 1,
+      "name": "test_tag1",
+      "taggings_count": 5
+    },
+    {
+      "id": 2,
+      "name": "test_tag2",
+      "taggings_count": 5
+    }
+  ]
+}
 ```
 
 `PUT /ideas/:id`
