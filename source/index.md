@@ -38,11 +38,11 @@ If no, or an invalid, `private_token` is provided then an error message will be 
 
 Example of a valid API request:
 
-`GET http://ideaegg.me/api/v2/ideas?private_token=QVy1PB7sTxfy4pqfZM1U`
+`GET http://beta.ideaegg.me/api/v2/ideas?private_token=QVy1PB7sTxfy4pqfZM1U`
 
 Example for a valid API request using curl and authentication via header:
 
-`curl --header "PRIVATE-TOKEN: QVy1PB7sTxfy4pqfZM1U" "http://ideaegg.me/api/v2/ideas"`
+`curl --header "PRIVATE-TOKEN: QVy1PB7sTxfy4pqfZM1U" "http://beta.ideaegg.me/api/v2/ideas"`
 
 
 ## Pagination
