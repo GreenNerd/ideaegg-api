@@ -150,6 +150,7 @@ Content-Type: application/json
 ```
 ```http
 HTTP/1.1 201 created
+Content-Type: application/json
 
 {
   "id": 6,
@@ -504,6 +505,7 @@ Content-Type: application/json
 ```
 ```http
 HTTP/1.1 200 ok
+Content-Type: application/json
 
 [
   {
@@ -544,7 +546,7 @@ HTTP/1.1 200 ok
 Untag an idea by the authenticated user.
 
 ```http
-DELETE /ideas/8/tags HTTP/1.1
+POST /ideas/8/untags HTTP/1.1
 PRIVATE-TOKEN: your_private_token
 Content-Type: application/json
 
@@ -570,7 +572,7 @@ Content-Type: application/json
 ]
 ```
 
-`DELETE /ideas/:id/tags`
+`POST /ideas/:id/untags`
 
 **Parameters**
 
@@ -630,10 +632,13 @@ PRIVATE-TOKEN: your_private_token
 Content-Type: application/json
 
 {
-  body: 'this is a body'
+  "body": "this is a body"
 }
 ```
 ```http
+HTTP/1.1 200 ok
+Content-Type: application/json
+
 {
   "id": 7,
   "body": "test",

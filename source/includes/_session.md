@@ -12,7 +12,7 @@ Content-Type: application/json
   "username": "john_smith",
   "email": "john@example.com",
   "password": "test1234",
-  "apassword_confirmation": "test1234"
+  "password_confirmation": "test1234"
 }
 ```
 ```http
@@ -49,7 +49,7 @@ POST /sign_in HTTP/1.1
 Content-Type: application/json
 
 {
-  "email": "john@example.com",
+  "login": "john@example.com",
   "password": "test1234"
 }
 ```
