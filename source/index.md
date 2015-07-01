@@ -11,6 +11,7 @@ includes:
   - session
   - ideas
   - users
+  - markdown
   - errors
 
 search: true

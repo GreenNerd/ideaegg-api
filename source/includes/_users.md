@@ -41,8 +41,8 @@ Content-Type: application/json
 
 {
   "fullname": "test-fullname",
-  "avatar" : "http://qiniu.com/test",
-  "phone_number" : "13800000000"
+  "avatar": "http://qiniu.com/test",
+  "phone_number": "13800000000"
 }
 ```
 ```http
@@ -55,8 +55,8 @@ Content-Type: application/json
   "email": "test@qq.com",
   "fullname": "test-fullname",
   "created_at": "2015-05-23T01:27:56.015Z",
-  "phone_number" : "13800000000"
-  "avatar" : "http://qiniu.com/test",
+  "phone_number": "13800000000",
+  "avatar": "http://qiniu.com/test",
   "private_token": "WwUD85zhd_kMEurVu7SE"
 }
 ```
@@ -68,7 +68,6 @@ Content-Type: application/json
  Name      |     Type |   Description   |
 | :-------- | -------- | :------ |
 | fullname    |   string |  **Optional.** new fullname  |
-| wechat_openid    |   string |  **Optional.** wechat openid  |
 | phone_number    |   string |  **Optional.** phone number  |
 | avatar    |   string |  **Optional.** avatar url  |
 
@@ -287,9 +286,9 @@ PRIVATE-TOKEN: your_private_token
 Content-Type: application/json
 
 {
-  current_password: 'test_password',
-  password: 'new_password',
-  password_confirmation: 'new_password'
+  "current_password": "test_password",
+  "password": "new_password",
+  "password_confirmation": "new_password"
 }
 ```
 ```http
