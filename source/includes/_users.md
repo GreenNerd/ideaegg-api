@@ -40,6 +40,7 @@ PRIVATE-TOKEN: your_private_token
 Content-Type: application/json
 
 {
+  "email": "new_email@qq.com"
   "fullname": "test-fullname",
   "avatar": "http://qiniu.com/test",
   "phone_number": "13800000000"
@@ -52,7 +53,7 @@ Content-Type: application/json
 {
   "id": 15,
   "username": "testtest",
-  "email": "test@qq.com",
+  "email": "new_email@qq.com",
   "fullname": "test-fullname",
   "created_at": "2015-05-23T01:27:56.015Z",
   "phone_number": "13800000000",
@@ -67,7 +68,8 @@ Content-Type: application/json
 
  Name      |     Type |   Description   |
 | :-------- | -------- | :------ |
-| fullname    |   string |  **Optional.** new fullname  |
+| email    |   string |  **Required.** new email  |
+| fullname    |   string |  **Required.** new fullname  |
 | phone_number    |   string |  **Optional.** phone number  |
 | avatar    |   string |  **Optional.** avatar url  |
 
