@@ -145,3 +145,33 @@ HTTP/1.1 204 OK
 | Name | Type | Description |
 | --- | --- | --- |
 | email | string | **Required**. Email of the user |
+
+
+## Sign up temporarily
+
+A key to log in
+
+```http
+POST /sign_up_temporarily` HTTP/1.1
+
+```
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 12,
+  "username": "0c60b755",
+  "email": "0c60b755@ideaegg.me",
+  "fullname": "0c60b755",
+  "private_token": "focmQrCFdk9DJHx9KvdL",
+  "created_at": "2015-07-30T05:28:58.421Z"
+}
+```
+
+`POST /sign_up_temporarily`
+
+**Parameters**
+
+- None
