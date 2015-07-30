@@ -45,19 +45,20 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the API! If you find someting wrong, you can open a issue on the <a href="https://github.com/GreenNerd/ideaegg-api/issues">github</a>.
+<p>Welcome to the API! If you find someting wrong, you can open a issue on the <a href="https://github.com/GreenNerd/ideaegg-api/issues">github</a>.</p>
+
 <aside class="notice">
   <li>The API uses JSON to serialize data. You <strong>don&rsquo;t need</strong> to specify <strong>.json</strong> at the end of API URL.</li>
   <li>The API in this article is version <strong>2</strong></li>
   <li>API requests <strong>MUST</strong> be prefixed with <strong>api</strong> and the API <strong>version</strong>.</li>
   <li>All exmaples in this article authenticate via header</li>
-</aside></p>
+</aside>
 
 <h1 id="explain">Explain</h1>
 
 <h2 id="authentication">Authentication</h2>
 
-<p>Almost all API requests require authentication. You need to pass a <code class="prettyprint">private_token</code> parameter by URL or header. If passed as header, the header name must be &ldquo;PRIVATE-TOKEN&rdquo; (capital and with dash instead of underscore).</p>
+<p>Almost all API requests require authentication. You need to pass a <code class="prettyprint">private_token</code> parameter by URL or header. If passed as header, the header name must be “PRIVATE-TOKEN” (capital and with dash instead of underscore).</p>
 
 <p>If no, or an invalid, <code class="prettyprint">private_token</code> is provided then an error message will be returned with status code 401:</p>
 
@@ -74,13 +75,14 @@
 <h2 id="pagination">Pagination</h2>
 <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/api/v1/ideas?page=2&amp;per_page=10</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 
 <p>When listing resources you can pass the following parameters:</p>
 
 <ul>
-<li><code class="prettyprint">page</code> (default: <code class="prettyprint">1</code>) - page number</li>
-<li><code class="prettyprint">per_page</code> (default: <code class="prettyprint">24</code>, max: <code class="prettyprint">100</code>) - number of items to list per page</li>
+<li>  <code class="prettyprint">page</code> (default: <code class="prettyprint">1</code>) - page number</li>
+<li>  <code class="prettyprint">per_page</code> (default: <code class="prettyprint">24</code>, max: <code class="prettyprint">100</code>) - number of items to list per page</li>
 </ul>
 
           <h1 id="sessions">Sessions</h1>
@@ -97,6 +99,7 @@
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1234"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1234"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -109,6 +112,7 @@
   </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dd34asd13as"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-05-23T08:00:58Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">POST /sign_up</code></p>
@@ -117,30 +121,30 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
-<th style="text-align: right">Type</th>
-<th style="text-align: left">Description</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">username</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Required</strong>.The username of user</td>
+<td>username</td>
+<td>string</td>
+<td><strong>Required</strong>.The username of user</td>
 </tr>
 <tr>
-<td style="text-align: left">email</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Required</strong>.The email of user</td>
+<td>email</td>
+<td>string</td>
+<td><strong>Required</strong>.The email of user</td>
 </tr>
 <tr>
-<td style="text-align: left">password</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Required</strong>.User password</td>
+<td>password</td>
+<td>string</td>
+<td><strong>Required</strong>.User password</td>
 </tr>
 <tr>
-<td style="text-align: left">password_confirmation</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Required</strong>. User password confirmation</td>
+<td>password_confirmation</td>
+<td>string</td>
+<td><strong>Required</strong>. User password confirmation</td>
 </tr>
 </tbody></table>
 
@@ -154,6 +158,7 @@
   </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1234"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -166,6 +171,7 @@
   </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dd34asd13as"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-05-23T08:00:58Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">POST /sign_in</code></p>
@@ -174,20 +180,20 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
-<th style="text-align: right">Type</th>
-<th style="text-align: left">Description</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">login</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Required</strong>.The login of user: username or email</td>
+<td>login</td>
+<td>string</td>
+<td><strong>Required</strong>.The login of user: username or email</td>
 </tr>
 <tr>
-<td style="text-align: left">password</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Required</strong>.Valid password</td>
+<td>password</td>
+<td>string</td>
+<td><strong>Required</strong>.Valid password</td>
 </tr>
 </tbody></table>
 
@@ -198,6 +204,7 @@
 <span class="p">{</span><span class="w">
   </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_uid"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -210,6 +217,7 @@
   </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CFRcLE-N9YxgpFxKpngz"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T14:20:57.024Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">POST /sign_in_with/wechat</code></p>
@@ -218,25 +226,25 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
-<th style="text-align: right">Type</th>
-<th style="text-align: left">Description</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">uid</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Required</strong>.The openid of wechat</td>
+<td>uid</td>
+<td>string</td>
+<td><strong>Required</strong>.The openid of wechat</td>
 </tr>
 <tr>
-<td style="text-align: left">username</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Optional</strong>. The username of user.if no, the endpoint will generates one</td>
+<td>username</td>
+<td>string</td>
+<td><strong>Optional</strong>. The username of user.if no, the endpoint will generates one</td>
 </tr>
 <tr>
-<td style="text-align: left">email</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Optional</strong>. The email of user.if no, the endpoint will generates one</td>
+<td>email</td>
+<td>string</td>
+<td><strong>Optional</strong>. The email of user.if no, the endpoint will generates one</td>
 </tr>
 </tbody></table>
 
@@ -249,8 +257,10 @@
 <span class="p">{</span><span class="w">
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@qq.com"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+
 </code></pre>
 
 <p><code class="prettyprint">POST /reset_password</code></p>
@@ -259,17 +269,44 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
-<th style="text-align: right">Type</th>
-<th style="text-align: left">Description</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">email</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Required</strong>. Email of the user</td>
+<td>email</td>
+<td>string</td>
+<td><strong>Required</strong>. Email of the user</td>
 </tr>
 </tbody></table>
+
+<h2 id="sign-up-temporarily">Sign up temporarily</h2>
+
+<p>A key to log in</p>
+<pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/sign_up_temporarily`</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+</code></pre>
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c60b755"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c60b755@ideaegg.me"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c60b755"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"focmQrCFdk9DJHx9KvdL"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-30T05:28:58.421Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><code class="prettyprint">POST /sign_up_temporarily</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>None</li>
+</ul>
 
           <h1 id="ideas">Ideas</h1>
 
@@ -278,6 +315,7 @@
 <p>Get a list of ideas by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/ideas</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/ideas?page=1&amp;per_page=24&gt;;rel="first",</span>
@@ -339,6 +377,7 @@
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">GET /ideas</code> or <code class="prettyprint">GET /ideas?tag=foo</code></p>
@@ -347,15 +386,15 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
-<th style="text-align: right">Type</th>
-<th style="text-align: left">Description</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">tag</td>
-<td style="text-align: right">string</td>
-<td style="text-align: left"><strong>Optional.</strong>Inquire ideas by tag</td>
+<td>tag</td>
+<td>string</td>
+<td><strong>Optional.</strong>Inquire ideas by tag</td>
 </tr>
 </tbody></table>
 
@@ -364,6 +403,7 @@
 <p>Get a specific idea, identified by idea ID.</p>
 <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/ideas/1</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -400,6 +440,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">GET /ideas/:id</code></p>
@@ -408,15 +449,15 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
-<th style="text-align: right">Type</th>
-<th style="text-align: left">Description</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
-<td style="text-align: right">integer</td>
-<td style="text-align: left"><strong>Required.</strong>The id of an idea</td>
+<td>id</td>
+<td>integer</td>
+<td><strong>Required.</strong>The id of an idea</td>
 </tr>
 </tbody></table>
 
@@ -433,6 +474,7 @@
   </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-content"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">created</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -458,6 +500,7 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">POST /ideas</code></p>
@@ -466,41 +509,41 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">title</td>
+<td>title</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new idea title</td>
+<td><strong>Required.</strong> new idea title</td>
 </tr>
 <tr>
-<td style="text-align: left">content</td>
+<td>content</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new idea content</td>
+<td><strong>Required.</strong> new idea content</td>
 </tr>
 <tr>
-<td style="text-align: left">summary</td>
+<td>summary</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new idea summary</td>
+<td><strong>Required.</strong> new idea summary</td>
 </tr>
 <tr>
-<td style="text-align: left">cover</td>
+<td>cover</td>
 <td>string</td>
-<td style="text-align: left"><strong>Optional.</strong> new idea cover</td>
+<td><strong>Optional.</strong> new idea cover</td>
 </tr>
 <tr>
-<td style="text-align: left">tag</td>
+<td>tag</td>
 <td>string</td>
-<td style="text-align: left"><strong>Optional.</strong> add tags for the idea. eg. &ldquo;tag1,tag2&rdquo;</td>
+<td><strong>Optional.</strong> add tags for the idea. eg. “tag1,tag2”</td>
 </tr>
 </tbody></table>
 
 <h2 id="update-idea">Update idea</h2>
 
-<p>Update an idea&rsquo;s title or content owned by the authenticated user.</p>
+<p>Update an idea’s title or content owned by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/ideas/1</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -511,6 +554,7 @@
   </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-content2"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"cover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test2"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -547,6 +591,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">PUT /ideas/:id</code></p>
@@ -555,35 +600,35 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 <tr>
-<td style="text-align: left">title</td>
+<td>title</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new title</td>
+<td><strong>Required.</strong> new title</td>
 </tr>
 <tr>
-<td style="text-align: left">content</td>
+<td>content</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new content</td>
+<td><strong>Required.</strong> new content</td>
 </tr>
 <tr>
-<td style="text-align: left">summary</td>
+<td>summary</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new summary</td>
+<td><strong>Required.</strong> new summary</td>
 </tr>
 <tr>
-<td style="text-align: left">cover</td>
+<td>cover</td>
 <td>string</td>
-<td style="text-align: left"><strong>Optional.</strong> new cover</td>
+<td><strong>Optional.</strong> new cover</td>
 </tr>
 </tbody></table>
 
@@ -592,8 +637,10 @@
 <p>Delete an idea owned by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">DELETE</span> <span class="nn">/ideas/4</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">no content</span>
+
 </code></pre>
 
 <p><code class="prettyprint">DELETE /ideas/:id</code></p>
@@ -602,15 +649,15 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 </tbody></table>
 
@@ -619,6 +666,7 @@
 <p>Like an idea by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/ideas/1/vote</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -655,6 +703,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">PUT /ideas/:id/vote</code></p>
@@ -663,15 +712,15 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 </tbody></table>
 
@@ -680,6 +729,7 @@
 <p>Unlike an idea by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">DELETE</span> <span class="nn">/ideas/1/vote</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -716,6 +766,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">DELETE /ideas/:id/vote</code></p>
@@ -724,15 +775,15 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 </tbody></table>
 
@@ -741,6 +792,7 @@
 <p>Star an idea by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/ideas/1/star</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -777,6 +829,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">PUT /ideas/:id/star</code></p>
@@ -785,15 +838,15 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 </tbody></table>
 
@@ -802,6 +855,7 @@
 <p>Unstar an idea by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">DELETE</span> <span class="nn">/ideas/1/star</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -838,6 +892,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">DELETE /ideas/:id/star</code></p>
@@ -846,15 +901,15 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 </tbody></table>
 
@@ -868,6 +923,7 @@
 <span class="p">{</span><span class="w">
   </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag1, tag2"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -894,6 +950,7 @@
     </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">POST /ideas/:id/tags</code></p>
@@ -902,20 +959,20 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 <tr>
-<td style="text-align: left">tag</td>
+<td>tag</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> tags, splitted by &rsquo;,&rsquo; such as &lsquo;software&rsquo; or &#39;software, children&rsquo;</td>
+<td><strong>Required.</strong> tags, splitted by ’,’ such as ‘software’ or &lsquo;software, children’</td>
 </tr>
 </tbody></table>
 
@@ -929,6 +986,7 @@
 <span class="p">{</span><span class="w">
   </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tag1, tag2"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -945,6 +1003,7 @@
     </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">POST /ideas/:id/untags</code></p>
@@ -953,28 +1012,29 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 <tr>
-<td style="text-align: left">tag</td>
+<td>tag</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> tags, splitted by &rsquo;,&rsquo; such as &#39;software&rsquo; or &#39;software, children&rsquo;</td>
+<td><strong>Required.</strong> tags, splitted by ’,’ such as &#39;software’ or &#39;software, children’</td>
 </tr>
 </tbody></table>
 
-<h2 id="get-a-idea&#39;s-comments">Get a idea&rsquo;s comments</h2>
+<h2 id="get-a-idea’s-comments">Get a idea’s comments</h2>
 
 <p>Return the comments ordered by created time</p>
 <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/ideas/1/comments</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -999,6 +1059,7 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">GET /ideas/:id/comments</code></p>
@@ -1007,15 +1068,15 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 </tbody></table>
 
@@ -1027,6 +1088,7 @@
 <span class="p">{</span><span class="w">
   </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a body"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1047,6 +1109,7 @@
     </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">POST /ideas/:id/comments</code></p>
@@ -1055,20 +1118,20 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> id of the idea</td>
+<td><strong>Required.</strong> id of the idea</td>
 </tr>
 <tr>
-<td style="text-align: left">body</td>
+<td>body</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> content of the comment</td>
+<td><strong>Required.</strong> content of the comment</td>
 </tr>
 </tbody></table>
 
@@ -1079,6 +1142,7 @@
 <p>Get self user</p>
 <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/user</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1093,6 +1157,7 @@
   </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WwUD85zhd_kMEurVu7SE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">GET /user</code></p>
@@ -1100,22 +1165,23 @@
 <p><strong>Parameters</strong></p>
 
 <ul>
-<li>None</li>
+<li>  None</li>
 </ul>
 
 <h2 id="update-user">Update user</h2>
 
-<p>Update a user&rsquo;s avatar, fullname or phone_number by the authenticated user.</p>
+<p>Update a user’s avatar, fullname or phone_number by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">PUT</span> <span class="nn">/user</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_email@qq.com"</span><span class="w">
-  </span><span class="s2">"fullname"</span><span class="err">:</span><span class="w"> </span><span class="s2">"test-fullname"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_email@qq.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-fullname"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1130,6 +1196,7 @@
   </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://qiniu.com/test"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WwUD85zhd_kMEurVu7SE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">PUT /user</code></p>
@@ -1138,30 +1205,30 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">email</td>
+<td>email</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new email</td>
+<td><strong>Required.</strong> new email</td>
 </tr>
 <tr>
-<td style="text-align: left">fullname</td>
+<td>fullname</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new fullname</td>
+<td><strong>Required.</strong> new fullname</td>
 </tr>
 <tr>
-<td style="text-align: left">phone_number</td>
+<td>phone_number</td>
 <td>string</td>
-<td style="text-align: left"><strong>Optional.</strong> phone number</td>
+<td><strong>Optional.</strong> phone number</td>
 </tr>
 <tr>
-<td style="text-align: left">avatar</td>
+<td>avatar</td>
 <td>string</td>
-<td style="text-align: left"><strong>Optional.</strong> avatar url</td>
+<td><strong>Optional.</strong> avatar url</td>
 </tr>
 </tbody></table>
 
@@ -1170,23 +1237,25 @@
 <p>Follow another user by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/users/2/follow</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
+
 </code></pre>
 
 <p><code class="prettyprint">POST /users/:id/follow</code></p>
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> The id of a user that will be followed</td>
+<td><strong>Required.</strong> The id of a user that will be followed</td>
 </tr>
 </tbody></table>
 
@@ -1195,39 +1264,41 @@
 <p>Unfollow another user by the authenticated user.</p>
 <pre class="highlight http"><code><span class="nf">DELETE</span> <span class="nn">/users/2/follow</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
+
 </code></pre>
 
 <p><code class="prettyprint">DELETE /users/:id/follow</code></p>
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">id</td>
+<td>id</td>
 <td>integer</td>
-<td style="text-align: left"><strong>Required.</strong> The id of a user that will be unfollowed</td>
+<td><strong>Required.</strong> The id of a user that will be unfollowed</td>
 </tr>
 </tbody></table>
 
 <h2 id="get-my-ideas">Get my ideas</h2>
 
-<p>Get current user&rsquo;s ideas.</p>
+<p>Get current user’s ideas.</p>
 <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/user/ideas/created</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOken</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 <span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/user/ideas/created?page=1&amp;per_page=24&gt;; rel="first",</span>
 <span class="s">      &lt;http://localhost:3000/api/v2/user/ideas/created?page=1&amp;per_page=24&gt;; rel="last"</span>
 
-<span class="w">
-</span><span class="p">[</span><span class="w">
+<span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
     </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test-title"</span><span class="p">,</span><span class="w">
@@ -1260,6 +1331,7 @@
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">GET /user/ideas/voted</code></p>
@@ -1267,14 +1339,15 @@
 <p><strong>Parameters</strong></p>
 
 <ul>
-<li>None</li>
+<li>  None</li>
 </ul>
 
 <h2 id="get-my-liked-ideas">Get my liked ideas</h2>
 
-<p>Get current user&rsquo;s liked ideas.</p>
+<p>Get current user’s liked ideas.</p>
 <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/user/ideas/voted</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PROVIATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1315,6 +1388,7 @@
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">GET /user/ideas/voted</code></p>
@@ -1322,14 +1396,15 @@
 <p><strong>Parameters</strong></p>
 
 <ul>
-<li>None</li>
+<li>  None</li>
 </ul>
 
 <h2 id="get-my-starred-ideas">Get my starred ideas</h2>
 
-<p>Get current user&rsquo;s starred ideas.</p>
+<p>Get current user’s starred ideas.</p>
 <pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/user/ideas/starred</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PROVIATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1370,6 +1445,7 @@
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">GET /user/ideas/starred</code></p>
@@ -1377,7 +1453,7 @@
 <p><strong>Parameters</strong></p>
 
 <ul>
-<li>None</li>
+<li>  None</li>
 </ul>
 
 <h2 id="modify-password">Modify password</h2>
@@ -1392,6 +1468,7 @@
   </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_password"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"password_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_password"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1406,6 +1483,7 @@
   </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WwUD85zhd_kMEurVu7SE"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">PUT /user/password</code></p>
@@ -1414,25 +1492,25 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">current_password</td>
+<td>current_password</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> currnet password of the user</td>
+<td><strong>Required.</strong> currnet password of the user</td>
 </tr>
 <tr>
-<td style="text-align: left">password</td>
+<td>password</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new password of the user</td>
+<td><strong>Required.</strong> new password of the user</td>
 </tr>
 <tr>
-<td style="text-align: left">password_confirmation</td>
+<td>password_confirmation</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> new password confirmation</td>
+<td><strong>Required.</strong> new password confirmation</td>
 </tr>
 </tbody></table>
 
@@ -1446,6 +1524,7 @@
 <span class="p">{</span><span class="w">
   </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"## title"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">ok</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1453,6 +1532,7 @@
 <span class="p">{</span><span class="w">
   </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;h2&gt;title&lt;/h2&gt;\n"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 
 <p><code class="prettyprint">POST /markdown/preview</code></p>
@@ -1461,15 +1541,80 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Name</th>
+<th>Name</th>
 <th>Type</th>
-<th style="text-align: left">Description</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">content</td>
+<td>content</td>
 <td>string</td>
-<td style="text-align: left"><strong>Required.</strong> the content that is converted into html</td>
+<td><strong>Required.</strong> the content that is converted into html</td>
+</tr>
+</tbody></table>
+
+          <h1 id="feedback">Feedback</h1>
+
+<h2 id="create-a-feedback">create a feedback</h2>
+<pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/products/1/feedbacks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
+</code></pre>
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a body"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stars"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"www.baidu.com/picture.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">" www.test.com/image.png"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"contact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xx@qq.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"anonymous"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_name"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><code class="prettyprint">POST /products/:id/feedbacks</code></p>
+
+<p><strong>Parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>string</td>
+<td><strong>Required.</strong> body of feedback</td>
+</tr>
+<tr>
+<td>stars</td>
+<td>integer</td>
+<td><strong>Required.</strong> stars of feedback</td>
+</tr>
+<tr>
+<td>images</td>
+<td>array</td>
+<td><strong>Optional.</strong> images of feedback</td>
+</tr>
+<tr>
+<td>contact</td>
+<td>string</td>
+<td><strong>Optional.</strong> user contact</td>
+</tr>
+<tr>
+<td>anonymous</td>
+<td>boolean</td>
+<td><strong>Optional.</strong> if anonymous</td>
 </tr>
 </tbody></table>
 
