@@ -12,6 +12,7 @@ includes:
   - ideas
   - users
   - markdown
+  - feedback
   - errors
 
 search: true
