@@ -1581,6 +1581,17 @@
 <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/products/1/feedbacks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
 
+{
+  "body": "this is a body",
+  "stars": 5,
+  "images": [
+    "www.baidu.com/picture.png",
+    " www.test.com/image.png"
+  ],
+  "contact": "xx@qq.com",
+  "anonymous": false
+}
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1621,7 +1632,7 @@
 <tr>
 <td>stars</td>
 <td>integer</td>
-<td><strong>Required.</strong> stars of feedback</td>
+<td><strong>Required.</strong> stars of feedback(value in 0-5)</td>
 </tr>
 <tr>
 <td>images</td>
