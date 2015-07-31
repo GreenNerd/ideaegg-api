@@ -6,6 +6,17 @@
 POST /products/1/feedbacks HTTP/1.1
 PRIVATE-TOKEN: your_private_token
 
+{
+  "body": "this is a body",
+  "stars": 5,
+  "images": [
+    "www.baidu.com/picture.png",
+    " www.test.com/image.png"
+  ],
+  "contact": "xx@qq.com",
+  "anonymous": false
+}
+
 ```
 
 ```http
@@ -36,7 +47,7 @@ Content-Type: application/json
 | Name | Type | Description |
 | --- | --- | --- |
 | body | string | **Required.** body of feedback |
-| stars | integer | **Required.** stars of feedback |
+| stars | integer | **Required.** stars of feedback(value in 0-5) |
 | images | array | **Optional.** images of feedback |
 | contact | string | **Optional.** user contact |
 | anonymous | boolean | **Optional.** if anonymous |
