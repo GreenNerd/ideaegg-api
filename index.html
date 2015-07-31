@@ -202,7 +202,12 @@
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-  </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_uid"</span><span class="w">
+  </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_uid"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2@ideaegg.me"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.test.com/test.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -215,7 +220,9 @@
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2@ideaegg.me"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CFRcLE-N9YxgpFxKpngz"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T14:20:57.024Z"</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T14:20:57.024Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.test.com/test.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -245,6 +252,21 @@
 <td>email</td>
 <td>string</td>
 <td><strong>Optional</strong>. The email of user.if no, the endpoint will generates one</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>string</td>
+<td><strong>Optional</strong>. The avatar of user.</td>
+</tr>
+<tr>
+<td>fullname</td>
+<td>string</td>
+<td><strong>Optional</strong>. The fullname of user.if no, the endpoint will generates one according to username</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>string</td>
+<td><strong>Optional</strong>. The phone_number of user.</td>
 </tr>
 </tbody></table>
 
