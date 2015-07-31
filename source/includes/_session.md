@@ -89,7 +89,12 @@ POST /sign_in_with/wechat HTTP/1.1
 Content-Type: application/json
 
 {
-  "uid": "test_uid"
+  "uid": "test_uid",
+  "username": "cb41b7b2",
+  "email": "cb41b7b2@ideaegg.me",
+  "fullname": "cb41b7b2",
+  "avatar": "www.test.com/test.png",
+  "phone_number": "13800000000"
 }
 
 ```
@@ -104,7 +109,9 @@ Content-Type: application/json
   "email": "cb41b7b2@ideaegg.me",
   "fullname": "cb41b7b2",
   "private_token": "CFRcLE-N9YxgpFxKpngz",
-  "created_at": "2015-06-06T14:20:57.024Z"
+  "created_at": "2015-06-06T14:20:57.024Z",
+  "avatar": "www.test.com/test.png",
+  "phone_number": "13800000000"
 }
 
 ```
@@ -118,6 +125,9 @@ Content-Type: application/json
 | uid | string | **Required**.The openid of wechat |
 | username | string | **Optional**. The username of user.if no, the endpoint will generates one |
 | email | string | **Optional**. The email of user.if no, the endpoint will generates one |
+| avatar | string | **Optional**. The avatar of user. |
+| fullname | string | **Optional**. The fullname of user.if no, the endpoint will generates one according to username |
+| phone_number | string | **Optional**. The phone_number of user. |
 
 ## Reset password
 
