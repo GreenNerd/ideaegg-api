@@ -202,7 +202,12 @@
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 
 <span class="p">{</span><span class="w">
-  </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_uid"</span><span class="w">
+  </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_uid"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2@ideaegg.me"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.test.com/test.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -215,7 +220,9 @@
   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2@ideaegg.me"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cb41b7b2"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"private_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CFRcLE-N9YxgpFxKpngz"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T14:20:57.024Z"</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-06T14:20:57.024Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.test.com/test.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13800000000"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -245,6 +252,21 @@
 <td>email</td>
 <td>string</td>
 <td><strong>Optional</strong>. The email of user.if no, the endpoint will generates one</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>string</td>
+<td><strong>Optional</strong>. The avatar of user.</td>
+</tr>
+<tr>
+<td>fullname</td>
+<td>string</td>
+<td><strong>Optional</strong>. The fullname of user.if no, the endpoint will generates one according to username</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>string</td>
+<td><strong>Optional</strong>. The phone_number of user.</td>
 </tr>
 </tbody></table>
 
@@ -1516,6 +1538,81 @@
 </tr>
 </tbody></table>
 
+          <h1 id="tags">Tags</h1>
+
+<h2 id="list-tags">List tags</h2>
+
+<p>Paging list the tags ordered by number of use</p>
+<pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/tags</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
+</code></pre>
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/tags?page=1&amp;per_page=24&gt;; rel="first",</span>
+<span class="s">      &lt;http://localhost:3000/api/v2/tags?page=1&amp;per_page=24&gt;; rel="last"</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p><code class="prettyprint">GET /tags</code></p>
+
+<p><strong>parameters</strong></p>
+
+<ul>
+<li>None</li>
+</ul>
+
+<h2 id="query-tags">Query tags</h2>
+
+<p>query tags by the name, results will be paging listed</p>
+<pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/tags/query?name=tag1</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
+
+</code></pre>
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Link</span><span class="p">:</span> <span class="s">&lt;http://localhost:3000/api/v2/tags/query?page=1&amp;per_page=24&gt;; rel="first",</span>
+<span class="s">      &lt;http://localhost:3000/api/v2/tags/query?page=1&amp;per_page=24&gt;; rel="last"</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_tag1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"taggings_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p><code class="prettyprint">GET /tags/query</code></p>
+
+<p><strong>parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td><strong>Required.</strong> name of the tag</td>
+</tr>
+</tbody></table>
+
           <h1 id="markdown">Markdown</h1>
 
 <h2 id="convert-markdown-into-html">Convert markdown into html</h2>
@@ -1561,6 +1658,17 @@
 <pre class="highlight http"><code><span class="nf">POST</span> <span class="nn">/products/1/feedbacks</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">PRIVATE-TOKEN</span><span class="p">:</span> <span class="s">your_private_token</span>
 
+{
+  "body": "this is a body",
+  "stars": 5,
+  "images": [
+    "www.baidu.com/picture.png",
+    " www.test.com/image.png"
+  ],
+  "contact": "xx@qq.com",
+  "anonymous": false
+}
+
 </code></pre>
 <pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
@@ -1601,7 +1709,7 @@
 <tr>
 <td>stars</td>
 <td>integer</td>
-<td><strong>Required.</strong> stars of feedback</td>
+<td><strong>Required.</strong> stars of feedback(value in 0-5)</td>
 </tr>
 <tr>
 <td>images</td>
