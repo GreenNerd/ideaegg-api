@@ -11,6 +11,7 @@ includes:
   - session
   - ideas
   - users
+  - tags
   - markdown
   - feedback
   - errors
